@@ -19,14 +19,14 @@ module.exports = function(params){
 	self.onEvent=function(event) {
     	console.log(event);
 		if(!event.bot_id && event.type=='message'){
-			 self.bot.postMessage(event.channel, 'meow!');		
-		}
+			// self.bot.postMessage(event.channel, 'meow!');		
+		
 		axios.get("http://www.chucknorrisfacts.fr/api?tri=alea&nb=1")
 	    .then(function (response) {
 			console.log(response);
-	    	self.bot.postMessage(event.channel,response);
+	    	self.bot.postMessage(event.channel,response.data[0].fact);
   		});
-		
+		}
 	}
 	
 }
