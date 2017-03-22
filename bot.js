@@ -14,7 +14,7 @@ module.exports = function(params){
 	}
 	self.onEvent=function(event) {
     	console.log(event);
-		if(event.type=='message'){
+		if(!event.bot_id && event.type=='message'){
 			 self.bot.postMessage(event.channel, 'meow!');		
 		}
 	}
