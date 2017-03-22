@@ -11,12 +11,21 @@ module.exports = function(params){
 	self.onStart=function() {
     	console.log('start');
 		self.bot.postMessageToUser('soft', 'salutn je suis là!!!'); 
+
+		self.bot.getUser(self.bot.self.name).then(function(user)){
+			self.user = user;		
+		});
 	}
 	self.onEvent=function(event) {
     	console.log(event);
 		if(!event.bot_id && event.type=='message'){
 			 self.bot.postMessage(event.channel, 'meow!');		
 		}
+		axios.get("http://www.chucknorrisfacts.fr/api?tri=alea&nb=1")
+	    .then(function (response) {
+	    	self.bot.postMessage(event.channel,response);
+  		});
+		
 	}
 	
 }
