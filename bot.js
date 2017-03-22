@@ -12,7 +12,7 @@ module.exports = function(params){
     	console.log('start');
 		self.bot.postMessageToUser('soft', 'salutn je suis là!!!'); 
 
-		self.bot.getUser(self.bot.self.name).then(function(user)){
+		self.bot.getUser(self.bot.self.name).then(function(user){
 			self.user = user;		
 		});
 	}
