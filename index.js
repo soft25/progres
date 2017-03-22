@@ -1,11 +1,12 @@
 var SlackBot = require('./bot.js');
 
-var bot =  = new SlackBot({
+var bot = new SlackBot({
     token: process.env.SLACK_BOT_TOKEN, 
-    name: 'My Bot'
+    name: 'sofiane Bot'
 });
 bot.connect();
-bot.on('start', function() {
+
+/*bot.on('start', function() {
     // more information about additional params https://api.slack.com/methods/chat.postMessage
     var params = {
         icon_emoji: ':cat:'
@@ -17,5 +18,5 @@ bot.on('start', function() {
     // define existing username instead of 'user_name'
     bot.postMessageToUser('soft', 'meow!', params); 
     
-});
+});*/
 
