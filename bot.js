@@ -14,7 +14,7 @@ module.exports = function(params){
 		
 		self.bot.getUser(self.bot.self.name).then(function(user)){
 			self.user = user;		
-		}
+		});
 	}
 	self.onEvent=function(event) {
     	console.log(event);
