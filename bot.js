@@ -23,6 +23,7 @@ module.exports = function(params){
 		}
 		axios.get("http://www.chucknorrisfacts.fr/api?tri=alea&nb=1")
 	    .then(function (response) {
+			console.log(response);
 	    	self.bot.postMessage(event.channel,response);
   		});
 		
