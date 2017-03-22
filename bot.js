@@ -11,13 +11,12 @@ module.exports = function(params){
 	self.onStart=function() {
     	console.log('start');
 		self.bot.postMessageToUser('soft', 'salutn je suis là!!!'); 
-		
-		self.bot.getUser(self.bot.self.name).then(function(user)){
-			self.user = user;		
-		});
 	}
 	self.onEvent=function(event) {
     	console.log(event);
+		if(event.type=='message'){
+			 self.bot.postMessage(event.channel, 'meow!');		
+		}
 	}
 	
 }
