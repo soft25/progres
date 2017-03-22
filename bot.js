@@ -22,7 +22,7 @@ module.exports = function(params){
 		if(!event.bot_id && event.type=='message'){
 			// self.bot.postMessage(event.channel, 'meow!');		
 		
-		axios.get("http://www.chucknorrisfacts.fr/api?tri=alea&nb=1")
+		axios.get("http://www.chucknorrisfacts.fr/api/get?data=tri:alea;nb:1")
 	    .then(function (response) {
 			console.log(response);
 	    	self.bot.postMessage(event.channel,response.data[0].fact);
